@@ -1,0 +1,15 @@
+.mui-editor-left-aligned-block, .mui-editor-left-aligned-block > div {
+    text-align: left !important;
+}
+
+.mui-editor-center-aligned-block, .mui-editor-center-aligned-block > div {
+    text-align: center !important;
+}
+
+.mui-editor-right-aligned-block, .mui-editor-right-aligned-block > div {
+    text-align: right !important;
+}
+
+.mui-editor-justify-aligned-block, .mui-editor-justify-aligned-block > div {
+    text-align: justify !important;
+}
