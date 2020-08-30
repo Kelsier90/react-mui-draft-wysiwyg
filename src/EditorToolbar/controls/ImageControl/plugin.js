@@ -8,19 +8,20 @@ import useEditorFocus from '../../../hooks/useEditorFocus';
 import Popover from '@material-ui/core/Popover';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import ImageIcon from '@material-ui/icons/Image';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import PhotoSizeSelectLargeIcon from '@material-ui/icons/PhotoSizeSelectLarge';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 const EditorMedia = ({ contentState, block }) => {
     const entity = contentState.getEntity(block.getEntityAt(0));
-    const { src, width = 'auto', height = 'auto' } = entity.getData();
     const type = entity.getType();
 
     if (type === entities.IMAGE) {
+        const { src, width = 'auto', height = 'auto' } = entity.getData();
         return (
             <EditorImage
                 src={src}
@@ -163,6 +164,14 @@ const EditorImage = ({ src, width, height, contentState, block }) => {
                         title={editor.translate('controls.image.actions.alignRight')}>
                         <ImageIcon />
                         <ArrowRightIcon />
+                    </Button>
+                    <Button
+                        onClick={() => {
+                            hideOptions();
+                            editor.showResizeImageDialog(block.getEntityAt(0));
+                        }}
+                        title={editor.translate('controls.image.actions.resize')}>
+                        <PhotoSizeSelectLargeIcon />
                     </Button>
                     <Button
                         onClick={removeImage}

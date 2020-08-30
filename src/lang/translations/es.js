@@ -57,6 +57,7 @@ export default {
                 alignCenter: 'Centrar',
                 alignRight: 'Alinear a la derecha',
                 remove: 'Eliminar imagen',
+                resize: 'Redimensionar',
             },
             labels: {
                 dropImageHere: 'Arrastra una imagen aquí o haz click para subir una',

@@ -5,9 +5,29 @@ import Popover from '@material-ui/core/Popover';
 import Tooltip from '@material-ui/core/Tooltip';
 import FormatColorResetIcon from '@material-ui/icons/FormatColorReset';
 import CheckIcon from '@material-ui/icons/Check';
-import './styles.css';
 import { isLightOrDark } from '../../../../utils/colorUtils';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    colorRow: {
+        display: 'flex',
+        alignContent: 'center',
+        alignItems: 'center',
+        padding: 5,
+    },
+    colorItem: {
+        height: 25,
+        width: 25,
+        borderRadius: '50%',
+        margin: 3,
+        border: 'solid 1px #c4c4c4',
+        cursor: 'pointer',
+        display: 'flex',
+        alignContent: 'center',
+        alignItems: 'center',
+    },
+});
 
 function ColorSelectorControl({
     selectedColor,
@@ -17,6 +37,7 @@ function ColorSelectorControl({
     children,
     ...rest
 }) {
+    const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const menuId = Math.random().toString(36).substring(8);
     const colorRows = [[]];
@@ -72,16 +93,18 @@ function ColorSelectorControl({
                         None
                     </Button>
                     {colorRows.map((colorRow, colorRowI) => (
-                        <div key={`color-row-${colorRowI}`} className="mui-editor-color-row">
+                        <div key={`color-row-${colorRowI}`} className={classes.colorRow}>
                             {colorRow.map((colorData) => (
                                 <Tooltip key={colorData.value} title={colorData.text}>
                                     <div
-                                        className="mui-editor-color-item"
                                         onClick={() => {
                                             handleClose();
                                             onSelectColor(colorData);
                                         }}
-                                        style={{ backgroundColor: colorData.color }}>
+                                        className={classes.colorItem}
+                                        style={{
+                                            backgroundColor: colorData.color,
+                                        }}>
                                         {selectedColor &&
                                         colorData.value === selectedColor.value ? (
                                             <CheckIcon

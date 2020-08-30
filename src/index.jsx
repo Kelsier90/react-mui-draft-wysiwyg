@@ -9,6 +9,8 @@ import Translator from './lang/Translator';
 import { makeStyles } from '@material-ui/core/styles';
 import 'draft-js/dist/Draft.css';
 
+export { toolbarControlTypes } from './types/editorToolbar';
+
 export const EditorContext = React.createContext({});
 
 export const MUIEditorState = {
@@ -23,6 +25,32 @@ export const MUIEditorState = {
 };
 
 const useStyles = makeStyles((theme) => ({
+    '@global': {
+        '.mui-editor-left-aligned-block': {
+            textAlign: 'left !important',
+            '& > div': {
+                textAlign: 'left !important',
+            },
+        },
+        '.mui-editor-center-aligned-block': {
+            textAlign: 'center !important',
+            '& > div': {
+                textAlign: 'center !important',
+            },
+        },
+        '.mui-editor-right-aligned-block': {
+            textAlign: 'right !important',
+            '& > div': {
+                textAlign: 'right !important',
+            },
+        },
+        '.mui-editor-justify-aligned-block': {
+            textAlign: 'justify !important',
+            '& > div': {
+                textAlign: 'justify !important',
+            },
+        },
+    },
     editorWrapper: {
         marginTop: theme.spacing(2),
         marginBottom: theme.spacing(2),
@@ -49,6 +77,9 @@ function MUIEditor({
     const translationsRef = React.useRef(null);
     const toolbarVisibleConfig = editorFactories.getConfigItem('toolbar', 'visible');
     const [isToolbarVisible, setIsToolbarVisible] = React.useState(toolbarVisibleConfig);
+    const [isResizeImageDialogVisible, setIsResizeImageDialogVisible] = React.useState(false);
+    const [resizeImageEntityKey, setResizeImageEntityKey] = React.useState(null);
+
     translationsRef.current = editorFactories.getTranslations();
     translateRef.current = React.useCallback((id) => {
         const translator = new Translator(translationsRef.current);
@@ -129,6 +160,16 @@ function MUIEditor({
                 onChange,
                 ref: editorRef.current,
                 translate: translateRef.current,
+                showResizeImageDialog: (entityKey) => {
+                    setIsResizeImageDialogVisible(true);
+                    setResizeImageEntityKey(entityKey);
+                },
+                hideResizeImageDialog: () => {
+                    setIsResizeImageDialogVisible(false);
+                    setResizeImageEntityKey(null);
+                },
+                isResizeImageDialogVisible,
+                resizeImageEntityKey,
             }}>
             {top}
             {EditorWrapper}

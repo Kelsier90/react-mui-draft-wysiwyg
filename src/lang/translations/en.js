@@ -57,6 +57,7 @@ export default {
                 alignCenter: 'Align center',
                 alignRight: 'Align right',
                 remove: 'Remove image',
+                resize: 'Resize',
             },
             labels: {
                 dropImageHere: 'Drop image here or click to upload',

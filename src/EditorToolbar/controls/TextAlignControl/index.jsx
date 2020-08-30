@@ -7,7 +7,6 @@ import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
 import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 import ButtonControl from '../core/ButtonControl';
-import './styles.css';
 
 function TextAlignControl() {
     const editor = useEditor();

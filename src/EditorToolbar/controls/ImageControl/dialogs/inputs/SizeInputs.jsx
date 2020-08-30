@@ -16,11 +16,13 @@ function SizeInputs({
     onChangeHeight,
 }) {
     const editor = useEditor();
-    const [maintainAspectRatio, setMaintainAspectRatio] = React.useState(false);
+    const [maintainAspectRatio, setMaintainAspectRatio] = React.useState(true);
     const aspectRatio = originalWidth / originalHeight;
 
     const handleChangeWidth = (ev) => {
-        const w = parseInt(ev.currentTarget.value);
+        ev.stopPropagation();
+        const value = ev.currentTarget.value;
+        const w = value === '' || isNaN(value) ? 0 : parseInt(value);
         onChangeWidth(w);
         if (maintainAspectRatio) {
             onChangeHeight(Math.round(w / aspectRatio));
@@ -28,7 +30,9 @@ function SizeInputs({
     };
 
     const handleChangeHeight = (ev) => {
-        const h = parseInt(ev.currentTarget.value);
+        ev.stopPropagation();
+        const value = ev.currentTarget.value;
+        const h = value === '' || isNaN(value) ? 0 : parseInt(value);
         onChangeHeight(h);
         if (maintainAspectRatio) {
             onChangeWidth(Math.round(h * aspectRatio));
@@ -52,6 +56,7 @@ function SizeInputs({
                     size="small"
                     value={width}
                     onChange={handleChangeWidth}
+                    onClick={(ev) => ev.stopPropagation()}
                     style={{ maxWidth: 90 }}
                 />
             </Grid>
@@ -67,6 +72,7 @@ function SizeInputs({
                     size="small"
                     value={height}
                     onChange={handleChangeHeight}
+                    onClick={(ev) => ev.stopPropagation()}
                     style={{ maxWidth: 90 }}
                 />
             </Grid>
