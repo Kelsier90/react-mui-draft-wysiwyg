@@ -27,7 +27,7 @@ yarn add @material-ui/icons draft-js react-mui-draft-wysiwyg
 
 ```jsx
 import React from 'react'
-import MUIEditor from 'react-mui-draft-wysiwyg'
+import MUIEditor, { MUIEditorState } from 'react-mui-draft-wysiwyg'
 
 function Example() {
   const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty());

@@ -5,7 +5,6 @@ const preferDefault = m => (m && m.default) || m
 
 
 exports.components = {
-  "component---cache-dev-404-page-js": hot(preferDefault(require("D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\.docz\\.cache\\dev-404-page.js"))),
   "component---docs-configuration-default-configuration-mdx": hot(preferDefault(require("D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\default-configuration.mdx"))),
   "component---docs-configuration-draft-editor-mdx": hot(preferDefault(require("D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\draft-editor.mdx"))),
   "component---docs-configuration-editor-mdx": hot(preferDefault(require("D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\editor.mdx"))),

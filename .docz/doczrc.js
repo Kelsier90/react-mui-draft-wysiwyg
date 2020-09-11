@@ -1,4 +1,5 @@
 export default {
+    base: '/react-mui-draft-wysiwyg/',
     files: 'docs/**/*.mdx',
     ignore: [
         'readme.md',
@@ -40,7 +41,6 @@ export default {
             ],
         },
     ],
-    public: '/docs/public',
     editBranch: 'docs',
     themeConfig: {
         styles: {

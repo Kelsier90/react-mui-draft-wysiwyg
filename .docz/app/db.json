@@ -36,10 +36,6 @@
     "repository": "https://github.com/Kelsier90/react-mui-draft-wysiwyg",
     "native": false,
     "themeConfig": {
-      "Container": {
-        "p": 4,
-        "maxWidth": 2000
-      },
       "styles": {
         "Container": {
           "maxWidth": 1360
@@ -51,6 +47,7 @@
       }
     },
     "separator": "-",
+    "base": "/react-mui-draft-wysiwyg/",
     "files": "docs/**/*.mdx",
     "ignore": [
       "readme.md",
@@ -64,7 +61,6 @@
       "CONTRIBUTING.md",
       "LICENSE.md"
     ],
-    "public": "/docs/public",
     "editBranch": "docs"
   },
   "entries": [
@@ -76,7 +72,7 @@
         "id": "73498ad0e1e62a714b08085d318f9de1",
         "filepath": "docs/index.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\index.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/index.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/index.mdx",
         "hidden": false,
         "slug": "docs-index",
         "menu": "",
@@ -118,7 +114,7 @@
         "id": "9db329e7551a691ef13c9022063416a9",
         "filepath": "docs/configuration/default-configuration.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\default-configuration.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/configuration/default-configuration.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/configuration/default-configuration.mdx",
         "hidden": false,
         "slug": "docs-configuration-default-configuration",
         "headings": [
@@ -139,7 +135,7 @@
         "id": "51a0c1a18155087d36213db31c64dda2",
         "filepath": "docs/configuration/draft-editor.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\draft-editor.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/configuration/draft-editor.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/configuration/draft-editor.mdx",
         "hidden": false,
         "slug": "docs-configuration-draft-editor",
         "headings": [
@@ -160,7 +156,7 @@
         "id": "e439e7c3757f6f8c559e6ab4cf2513f5",
         "filepath": "docs/configuration/editor.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\editor.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/configuration/editor.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/configuration/editor.mdx",
         "hidden": false,
         "slug": "docs-configuration-editor",
         "headings": [
@@ -196,7 +192,7 @@
         "id": "96265b8dd780230b4c3003ba12b8f9ee",
         "filepath": "docs/configuration/lang.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\lang.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/configuration/lang.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/configuration/lang.mdx",
         "hidden": false,
         "slug": "docs-configuration-lang",
         "headings": [
@@ -217,7 +213,7 @@
         "id": "f46eae60c4b5348c2d59dcccc83fbbbb",
         "filepath": "docs/configuration/toolbar.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\toolbar.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/configuration/toolbar.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/configuration/toolbar.mdx",
         "hidden": false,
         "slug": "docs-configuration-toolbar",
         "headings": [
@@ -428,7 +424,7 @@
         "id": "f251bebfdaa4f43112989a14a099b21f",
         "filepath": "docs/configuration/translations.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\configuration\\translations.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/configuration/translations.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/configuration/translations.mdx",
         "hidden": false,
         "slug": "docs-configuration-translations",
         "headings": [
@@ -449,7 +445,7 @@
         "id": "5020b11f5477088e925ea679daadfc85",
         "filepath": "docs/data-conversion/html.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\data-conversion\\html.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/data-conversion/html.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/data-conversion/html.mdx",
         "hidden": false,
         "slug": "docs-data-conversion-html",
         "headings": [
@@ -475,7 +471,7 @@
         "id": "b6ae214439356a698405de3b52ca1e56",
         "filepath": "docs/examples/basic-empty.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\examples\\basic-empty.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/examples/basic-empty.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/examples/basic-empty.mdx",
         "hidden": false,
         "slug": "docs-examples-basic-empty",
         "headings": [
@@ -501,7 +497,7 @@
         "id": "319cdb0304fb2c6587a5b5b1f7294a95",
         "filepath": "docs/examples/basic-with-content.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\examples\\basic-with-content.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/examples/basic-with-content.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/examples/basic-with-content.mdx",
         "hidden": false,
         "slug": "docs-examples-basic-with-content",
         "headings": [
@@ -527,7 +523,7 @@
         "id": "dd8c5c20cb090a3e37f7daec299375d5",
         "filepath": "docs/examples/display-content-in-your-page.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\examples\\display-content-in-your-page.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/examples/display-content-in-your-page.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/examples/display-content-in-your-page.mdx",
         "hidden": false,
         "slug": "docs-examples-display-content-in-your-page",
         "headings": [
@@ -553,7 +549,7 @@
         "id": "e3006466e702933484a0edb6333d215a",
         "filepath": "docs/examples/read-only-editor.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\examples\\read-only-editor.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/examples/read-only-editor.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/examples/read-only-editor.mdx",
         "hidden": false,
         "slug": "docs-examples-read-only-editor",
         "headings": [
@@ -579,7 +575,7 @@
         "id": "122770e2b945445cedf7b1da1b1ab8a6",
         "filepath": "docs/examples/save-content.mdx",
         "fullpath": "D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\docs\\examples\\save-content.mdx",
-        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\master\\docs/examples/save-content.mdx",
+        "link": "https://github.com/Kelsier90/react-mui-draft-wysiwyg\\edit\\docs\\docs/examples/save-content.mdx",
         "hidden": false,
         "slug": "docs-examples-save-content",
         "headings": [
@@ -619,14 +615,14 @@
                 "name": "func"
               },
               "required": true,
-              "description": "The function to be executed by the Editor when edits and selection changes occur.\r\n@param {Object} newState - The new editor state."
+              "description": "The function to be executed by the Editor when edits and selection changes occur. The new editor state is passed by parameter."
             },
             "onFocus": {
               "type": {
                 "name": "func"
               },
               "required": false,
-              "description": "The function to be executed by the Editor when a focus event is triggered.\r\n@param {Object} event - The SyntheticFocusEvent object",
+              "description": "The function to be executed by the Editor when a focus event is triggered. The new editor state is passed by parameter.",
               "defaultValue": {
                 "value": "null",
                 "computed": false
@@ -637,7 +633,7 @@
                 "name": "func"
               },
               "required": false,
-              "description": "The function to be executed by the Editor when a blur event is triggered.\r\n@param {Object} event - The SyntheticFocusEvent object",
+              "description": "The function to be executed by the Editor when a blur event is triggered. The new editor state is passed by parameter.",
               "defaultValue": {
                 "value": "null",
                 "computed": false
@@ -648,7 +644,7 @@
                 "name": "object"
               },
               "required": false,
-              "description": "All the editor configuration options\r\n@typedef {Object} config\r\n@property {string} lang - Editor language ISO code. Available languages: 'en', 'es', 'ca',\r\n@property {object} translations - Your custom translations,\r\n@property {object} draftEditor - Draftjs editor options. Full options list here: https://draftjs.org/docs/api-reference-editor#props,\r\n@property {string|FunctionComponent} editor.wrapperElement - Editor component element\r\n@property {string} editor.className - Editor className\r\n@property {string} editor.style - Editor style\r\n@property {string} toolbar.className - Toolbar className\r\n@property {string} toolbar.style - Toolbar style\r\n@property {boolean} toolbar.visible - Set the toolbar visibility\r\n@property {'top'|'bottom'} toolbar.position - Set the toolbar position ('top' or 'bottom')\r\n@property {Array} toolbar.controls - List of toolbar controls\r\n@property {object} toolbar.controlsConfig - Object that represents the configuration for all toolbar controls",
+              "description": "All the editor configuration options",
               "defaultValue": {
                 "value": "defaultConfig",
                 "computed": true
@@ -746,17 +742,6 @@
           "displayName": "CodeControl",
           "methods": [],
           "actualName": "CodeControl"
-        }
-      ]
-    },
-    {
-      "key": "src/EditorToolbar/controls/DividerControl/index.jsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "DividerControl",
-          "methods": [],
-          "actualName": "DividerControl"
         }
       ]
     },
@@ -1007,6 +992,17 @@
       ]
     },
     {
+      "key": "src/EditorToolbar/controls/DividerControl/index.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "DividerControl",
+          "methods": [],
+          "actualName": "DividerControl"
+        }
+      ]
+    },
+    {
       "key": "src/EditorToolbar/controls/FontBackgroundColorControl/index.jsx",
       "value": [
         {
@@ -1014,6 +1010,40 @@
           "displayName": "FontBackgroundColorControl",
           "methods": [],
           "actualName": "FontBackgroundColorControl",
+          "props": {
+            "configuration": {
+              "type": {
+                "name": "object"
+              },
+              "required": false,
+              "description": ""
+            },
+            "defaultConfiguration": {
+              "type": {
+                "name": "object"
+              },
+              "required": true,
+              "description": ""
+            },
+            "pluginData": {
+              "type": {
+                "name": "object"
+              },
+              "required": true,
+              "description": ""
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/EditorToolbar/controls/FontColorControl/index.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "FontColorControl",
+          "methods": [],
+          "actualName": "FontColorControl",
           "props": {
             "configuration": {
               "type": {
@@ -1052,40 +1082,6 @@
             "pluginData": {
               "type": {
                 "name": "any"
-              },
-              "required": true,
-              "description": ""
-            }
-          }
-        }
-      ]
-    },
-    {
-      "key": "src/EditorToolbar/controls/FontColorControl/index.jsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "FontColorControl",
-          "methods": [],
-          "actualName": "FontColorControl",
-          "props": {
-            "configuration": {
-              "type": {
-                "name": "object"
-              },
-              "required": false,
-              "description": ""
-            },
-            "defaultConfiguration": {
-              "type": {
-                "name": "object"
-              },
-              "required": true,
-              "description": ""
-            },
-            "pluginData": {
-              "type": {
-                "name": "object"
               },
               "required": true,
               "description": ""
@@ -1142,17 +1138,6 @@
       ]
     },
     {
-      "key": "src/EditorToolbar/controls/LinkAddControl/index.jsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "LinkAddControl",
-          "methods": [],
-          "actualName": "LinkAddControl"
-        }
-      ]
-    },
-    {
       "key": "src/EditorToolbar/controls/ItalicControl/index.jsx",
       "value": [
         {
@@ -1164,6 +1149,17 @@
       ]
     },
     {
+      "key": "src/EditorToolbar/controls/LinkAddControl/index.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "LinkAddControl",
+          "methods": [],
+          "actualName": "LinkAddControl"
+        }
+      ]
+    },
+    {
       "key": "src/EditorToolbar/controls/LinkRemoveControl/index.jsx",
       "value": [
         {
@@ -1171,6 +1167,17 @@
           "displayName": "LinkRemoveControl",
           "methods": [],
           "actualName": "LinkRemoveControl"
+        }
+      ]
+    },
+    {
+      "key": "src/EditorToolbar/controls/RedoControl/index.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "RedoControl",
+          "methods": [],
+          "actualName": "RedoControl"
         }
       ]
     },
@@ -1197,17 +1204,6 @@
       ]
     },
     {
-      "key": "src/EditorToolbar/controls/RedoControl/index.jsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "RedoControl",
-          "methods": [],
-          "actualName": "RedoControl"
-        }
-      ]
-    },
-    {
       "key": "src/EditorToolbar/controls/TextAlignControl/index.jsx",
       "value": [
         {
@@ -1219,17 +1215,6 @@
       ]
     },
     {
-      "key": "src/EditorToolbar/controls/UndoControl/index.jsx",
-      "value": [
-        {
-          "description": "",
-          "displayName": "UndoControl",
-          "methods": [],
-          "actualName": "UndoControl"
-        }
-      ]
-    },
-    {
       "key": "src/EditorToolbar/controls/UnderlineControl/index.jsx",
       "value": [
         {
@@ -1237,6 +1222,17 @@
           "displayName": "UnderlineControl",
           "methods": [],
           "actualName": "UnderlineControl"
+        }
+      ]
+    },
+    {
+      "key": "src/EditorToolbar/controls/UndoControl/index.jsx",
+      "value": [
+        {
+          "description": "",
+          "displayName": "UndoControl",
+          "methods": [],
+          "actualName": "UndoControl"
         }
       ]
     },

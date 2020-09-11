@@ -16,7 +16,7 @@ if (hasGatsbyConfig) {
 }
 
 const config = {
-  pathPrefix: '/',
+  pathPrefix: '/react-mui-draft-wysiwyg/',
 
   siteMetadata: {
     title: 'React Mui Draft Wysiwyg',
@@ -27,7 +27,12 @@ const config = {
     {
       resolve: 'gatsby-theme-docz',
       options: {
-        themeConfig: { Container: { p: 4, maxWidth: 2000 } },
+        themeConfig: {
+          styles: {
+            Container: { maxWidth: 1360 },
+            code: { backgroundColor: '#cecece', borderRadius: 2 },
+          },
+        },
         src: './',
         gatsbyRoot: null,
         themesDir: 'src',
@@ -84,14 +89,14 @@ const config = {
         'open-browser': null,
         root:
           'D:\\Documents\\React Projects\\components\\react-mui-draft-wysiwyg\\.docz',
-        base: '/',
+        base: '/react-mui-draft-wysiwyg/',
         source: './',
         'gatsby-root': null,
         files: 'docs/**/*.mdx',
         public: '/public',
         dest: '.docz/dist',
         d: '.docz/dist',
-        editBranch: 'master',
+        editBranch: 'docs',
         eb: 'master',
         'edit-branch': 'master',
         config: '',
