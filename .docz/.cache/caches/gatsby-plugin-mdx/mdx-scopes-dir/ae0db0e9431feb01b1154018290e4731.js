@@ -1,0 +1,10 @@
+import { Playground } from "docz";
+import MUIEditor, { MUIEditorState, toHTML } from "..\\..\\..\\..\\..\\src";
+import * as React from 'react';
+export default {
+  Playground,
+  MUIEditor,
+  MUIEditorState,
+  toHTML,
+  React
+};

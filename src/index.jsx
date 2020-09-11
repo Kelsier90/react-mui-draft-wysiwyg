@@ -7,9 +7,13 @@ import Paper from '@material-ui/core/Paper';
 import { defaultConfig } from './types/config';
 import Translator from './lang/Translator';
 import { makeStyles } from '@material-ui/core/styles';
+import toHTML from './conversion/toHTML';
 import 'draft-js/dist/Draft.css';
 
 export { toolbarControlTypes } from './types/editorToolbar';
+export { LANG_PREFIX } from './types/lang';
+export { fileToBase64 } from './utils/fileUtils';
+export { toHTML };
 
 export const EditorContext = React.createContext({});
 

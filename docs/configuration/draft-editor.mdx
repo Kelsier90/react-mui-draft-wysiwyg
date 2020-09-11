@@ -1,0 +1,31 @@
+---
+name: draftEditor
+route: /configuration/draft-editor
+menu: Configuration
+---
+
+import { Playground } from "docz";
+import MUIEditor, { MUIEditorState } from "../../src";
+
+# draftEditor
+
+This editor is based on [Draft.js](https://draftjs.org/). Using the `draftEditor` option you can change any of the Draft.js editor options listed here:
+
+https://draftjs.org/docs/api-reference-editor
+
+<Playground>
+  {() => {
+    const config = {
+      draftEditor: {
+        readOnly: true,
+      }
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other options.

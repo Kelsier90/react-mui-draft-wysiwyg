@@ -2,10 +2,13 @@
 
 > React component that allows to use a rich editor based on Material UI and Draft-js
 
-[![NPM](https://img.shields.io/npm/v/react-mui-draft-wysiwyg.svg)](https://www.npmjs.com/package/react-mui-draft-wysiwyg) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-mui-draft-wysiwyg.svg)](https://www.npmjs.com/package/react-mui-draft-wysiwyg)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+![MUI Draft.js WYSIWYG](https://raw.githubusercontent.com/Kelsier90/react-mui-draft-wysiwyg/master/example/public/logo.png)
 
 ## Install
-if you don't have Material UI installed yet:
+if you don't have Material UI installed yet, follow these instructions:
 
 https://material-ui.com/getting-started/installation/
 

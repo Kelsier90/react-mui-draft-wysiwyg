@@ -1,0 +1,33 @@
+---
+name: Read only editor
+route: /examples/read-only-editor
+menu: Examples
+---
+
+import MUIEditor, { MUIEditorState } from "../../src";
+import { Playground } from "docz";
+
+> Sets the editor to read only.
+
+## Imports
+
+```bash
+import MUIEditor, { MUIEditorState } from "react-mui-draft-wysiwyg";
+```
+
+## Playground
+
+<Playground>
+  {() => {
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty())
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (
+      <MUIEditor
+        editorState={editorState}
+        onChange={onChange}
+        config={{ draftEditor: { readOnly: true, } }} />
+        )
+  }}
+</Playground>

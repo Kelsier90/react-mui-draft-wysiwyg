@@ -1,0 +1,42 @@
+---
+name: HTML
+route: /data-conversion/html
+menu: Data conversion
+---
+import { Playground } from "docz";
+import MUIEditor,  { MUIEditorState, toHTML } from "../../src";
+
+# HTML
+
+You can convert the editor state content to *HTML*.
+
+## toHTML
+
+Its possible thanks to `toHTML` function, that converts the content of the editor state to *HTML*.
+
+Let's see how to do it.
+
+<Playground>
+  {() => {
+    const editorConfig = {}
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(editorConfig))
+    const [html, setHtml] = React.useState('');
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    const convertToHTML = () => {
+      const stateHtml = toHTML(editorState.getCurrentContent());
+      setHtml(stateHtml);
+    }
+    return (
+      <>
+        <MUIEditor
+          editorState={editorState}
+          onChange={onChange}
+          config={editorConfig} />
+        <button onClick={convertToHTML}>To HTML</button>
+        <div>{html}</div>
+      </>
+    )
+  }}
+</Playground>

@@ -1,0 +1,28 @@
+---
+name: Basic with empty content
+route: /examples/basic-empty
+menu: Examples
+---
+
+import MUIEditor, { MUIEditorState } from "../../src";
+import { Playground } from "docz";
+
+> Initializes the editor with empty content
+
+## Imports
+
+```bash
+import MUIEditor, { MUIEditorState } from "react-mui-draft-wysiwyg";
+```
+
+## Playground
+
+<Playground>
+  {() => {
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty())
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} />)
+  }}
+</Playground>

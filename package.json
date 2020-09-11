@@ -3,7 +3,18 @@
   "version": "1.0.1",
   "description": "React component that allows to use a rich editor based on Material UI and Draft-js",
   "author": "Kelsier90",
-  "keywords": ["react", "reactjs", "mui", "material", "wysiwyg", "rich", "text", "editor", "draft", "html"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "mui",
+    "material",
+    "wysiwyg",
+    "rich",
+    "text",
+    "editor",
+    "draft",
+    "html"
+  ],
   "license": "MIT",
   "repository": "Kelsier90/react-mui-draft-wysiwyg",
   "main": "dist/index.js",
@@ -25,16 +36,18 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
     "draft-js": "^0.11.6",
-    "prop-types": "latest"
+    "prop-types": "latest",
+    "react": "^16.0.0"
   },
   "devDependencies": {
-    "microbundle-crl": "^0.13.10",
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
+    "draft-js": "^0.11.6",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
@@ -46,17 +59,20 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
+    "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
+    "prop-types": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
-    "@material-ui/core": "^4.10.2",
-    "@material-ui/icons": "^4.9.1",
-    "draft-js": "^0.11.6",
-    "prop-types": "latest"
+    "react-scripts": "^3.4.1"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "docz": "^2.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
 }

@@ -1,0 +1,49 @@
+---
+name: Basic with content
+route: /examples/basic-with-content
+menu: Examples
+---
+
+import MUIEditor, { MUIEditorState } from "../../src";
+import { convertFromRaw } from 'draft-js';
+import { Playground } from "docz";
+
+> Initializes the editor with content
+
+## Imports
+
+```bash
+import MUIEditor, { MUIEditorState } from "react-mui-draft-wysiwyg";
+import { convertFromRaw } from 'draft-js';
+```
+
+More info for `convertFromRaw`:
+
+https://draftjs.org/docs/api-reference-data-conversion#convertfromraw
+
+## Playground
+
+<Playground>
+  {() => {
+    const editorConfig = {}
+    const rawContent = {
+      blocks: [
+        {
+          data: {},
+          depth: 0,
+          entityRanges: [],
+          inlineStyleRanges: [],
+          key: "2vm6d",
+          text: "Hello world",
+          type: "header-one",
+        },
+      ],
+      entityMap: {}
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createWithContent(editorConfig, convertFromRaw(rawContent)))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={editorConfig} />)
+  }}
+</Playground>

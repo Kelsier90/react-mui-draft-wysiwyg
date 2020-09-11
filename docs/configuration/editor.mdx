@@ -1,0 +1,79 @@
+---
+name: editor
+route: /configuration/editor
+menu: Configuration
+---
+
+import { Playground } from "docz";
+import MUIEditor, { MUIEditorState } from "../../src";
+
+# editor
+
+The editor options only affect the part where the user types, the editor.
+
+## editor.wrapperElement
+
+It is the component that wraps the editor (excluding the toolbar).
+By default, is the [`Paper`](https://material-ui.com/components/paper/) component from [Material UI](https://material-ui.com/).
+
+You can pass a `string` (for example: `'div'`) or a component.
+
+<Playground>
+  {() => {
+    const config = {
+      editor: {
+        wrapperElement: 'div',
+      }
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other wrappers.
+
+## editor.className
+
+It is the `className` for the editor.
+
+<Playground>
+  {() => {
+    const config = {
+      editor: {
+        className: 'my-class-name',
+      }
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+## editor.style
+
+It is the `style` for the editor.
+
+<Playground>
+  {() => {
+    const config = {
+      editor: {
+        style: {
+          border: '1px solid gray',
+          backgroundColor: '#a7a460'
+        },
+      }
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other styles.

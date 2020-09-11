@@ -1,0 +1,552 @@
+---
+name: toolbar
+route: /configuration/toolbar
+menu: Configuration
+---
+
+import { Playground } from "docz";
+import MUIEditor, { MUIEditorState, toolbarControlTypes, LANG_PREFIX } from "../../src";
+
+# toolbar
+
+Toolbar settings.
+
+## toolbar.className
+
+The toolbar wrapper className prop.
+
+## toolbar.style
+
+The toolbar wrapper style prop.
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        style: {
+          padding: 25,
+          background: '#50c1ae',
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other styles.
+
+## toolbar.visible
+
+Sets whether the toolbar is visible. It's `true` by default.
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        visible: false,
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and change the toolbar visibility.
+
+## toolbar.position
+
+Sets the toolbar position: Top or bottom.
+
+Possible values: `'top'` or `'bottom'`. The default value is `'top'`.
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        position: 'bottom',
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and change the toolbar position.
+
+## toolbar.controls
+
+Array that sets the toolbar controls. You can see the default controls on [Default configuration section](/configuration/default-configuration).
+
+In order to add the built-in controls you have to import them:
+
+```jsx
+import { toolbarControlTypes } from 'react-mui-draft-wysiwyg';
+```
+
+And pass them to `toolbar.controls` option like this:
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controls: [
+          toolbarControlTypes.bold,
+          toolbarControlTypes.italic,
+          toolbarControlTypes.underline,
+        ],
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+Let's see all the available controls.
+
+### undo
+
+This control allows the user undo the last change.
+
+```jsx
+toolbarControlTypes.undo
+```
+
+### redo
+
+This control allows the user redo the last change.
+
+```jsx
+toolbarControlTypes.redo
+```
+
+### bold
+
+This control allows the user toggle bold style of the current selected text.
+
+```jsx
+toolbarControlTypes.bold
+```
+
+### italic
+
+This control allows the user toggle italic style of the current selected text.
+
+```jsx
+toolbarControlTypes.italic
+```
+
+### underline
+
+This control allows the user toggle underline of the current selected text.
+
+```jsx
+toolbarControlTypes.underline
+```
+
+### strikethrough
+
+This control allows the user toggle strikethrough style of the current selected text.
+
+```jsx
+toolbarControlTypes.strikethrough
+```
+
+### fontColor
+
+This control allows the user change the font color of the current selected text.
+
+```jsx
+toolbarControlTypes.fontColor
+```
+
+### fontBackgroundColor
+
+This control allows the user change the font background color of the current selected text.
+
+```jsx
+toolbarControlTypes.fontBackgroundColor
+```
+
+### linkAdd
+
+This control allows the user add a link (URL) to the current selected text.
+
+```jsx
+toolbarControlTypes.linkAdd
+```
+
+### linkRemove
+
+This control allows the user remove all links of the current selected text.
+
+```jsx
+toolbarControlTypes.fontColor
+```
+
+### image
+
+This control allows the user add an image by uploading it or adding its URL.
+```jsx
+toolbarControlTypes.image
+```
+
+
+### blockType
+
+This control allows the user change the paragraph style (Header 1, Header 2, etc.).
+
+```jsx
+toolbarControlTypes.blockType
+```
+
+### fontSize
+
+This control allows the user change the font size of the selected text.
+
+```jsx
+toolbarControlTypes.fontSize
+```
+
+### fontFamily
+
+This control allows the user change the font family (Arial, Sans Serif, etc) of the selected text.
+
+```jsx
+toolbarControlTypes.fontFamily
+```
+
+### textAlign
+
+This control allows the user change text alignment (left, center, right and justify) of the selected paragraphs.
+
+```jsx
+toolbarControlTypes.textAlign
+```
+
+### unorderedList
+
+This control allows the user start an unordered list of items.
+
+```jsx
+toolbarControlTypes.unorderedList
+```
+
+
+### orderedList
+
+This control allows the user start an ordered list of items.
+
+```jsx
+toolbarControlTypes.orderedList
+```
+
+
+### divider
+
+This control is purely cosmetic. Add a vertical line that allows you to separate the rest of the controls.
+
+```jsx
+toolbarControlTypes.divider
+```
+
+## toolbar.controlsConfig
+
+This setting allow to customize some toolbar controls.
+
+### toolbar.controlsConfig.blockType
+
+#### toolbar.controlsConfig.blockType.options
+
+This allows you to set the available options.
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          blockType: {
+            options: [
+              {
+                value: 'default',
+                text: LANG_PREFIX + 'controls.blockType.labels.normal',
+              },
+              {
+                value: 'header-one',
+                text: LANG_PREFIX + 'controls.blockType.labels.header1',
+              },
+              {
+                value: 'header-two',
+                text: LANG_PREFIX + 'controls.blockType.labels.header2',
+              },
+              {
+                value: 'header-three',
+                text: LANG_PREFIX + 'controls.blockType.labels.header3',
+              },
+              {
+                value: 'blockquote',
+                text: 'Quote',
+              },
+            ],
+          }
+        },
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other options.
+
+The `value` property contains the draft block style. Built-in block styles: `'default'`, `'header-one'`, `'header-two'`, `'header-three'`, `'header-four'`, `'header-five'`, `'header-six'` and `'blockquote'`
+
+The `text` property contains the text that the user sees.
+
+The `LANG_PREFIX` constant in the example above tells to the editor to translate the text. For more information about translations go to: [lang section](/configuration/lang)
+
+### toolbar.controlsConfig.image
+
+#### toolbar.controlsConfig.image.uploadCallback
+
+Function containing the logic when an image is uploaded.  Receives image [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object as parameter. It must return a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) with the URL as `string`.
+
+By default the image is converted to base64.
+Use this option if you want upload to a server or doing something with it before is added to the editor.
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          image: {
+            uploadCallback: (file) => new Promise(function(resolve, reject) {
+              if (file.size > 1000000) {
+                reject('The image is too big! Max size: 1mb');
+              }
+              // Here you can upload the image to a server for example,
+              // grab the URL and return it with the resolve function
+              resolve('https://picsum.photos/200/300');
+            }),
+          }
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other logic.
+
+**Note**: This is only is applicable on the upload image option, it doesn't work on the URL option.
+
+### toolbar.controlsConfig.fontColor
+
+#### toolbar.controlsConfig.fontColor.colorsPerRow
+
+This is the maximum number of color options that will be shown in a single row. By default `10`.
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          fontColor: {
+            colorsPerRow: 30,
+          },
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other number.
+
+#### toolbar.controlsConfig.fontColor.options
+
+This is and array with the available color list. In order to see the default value go to: [Default configuration section](/configuration/default-configuration).
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          fontColor: {
+            options: [
+              { text: 'black', value: 'rgb(0, 0, 0)' },
+              { text: 'white', value: 'rgb(255, 255, 255)' },
+              { text: 'red', value: 'rgb(255, 0, 0)' },
+              { text: 'green', value: 'rgb(0, 255, 0)' },
+              { text: 'blue', value: 'rgb(0, 0, 255)' },
+            ],
+          },
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other colors.
+
+The `text` property contains the text shown in tooltip when the user moves the mouse over the color.
+The `value` property contains the value of the color in rgb, hex or string (``black``, `'red'`, etc.).
+
+### toolbar.controlsConfig.fontBackgroundColor
+
+#### toolbar.controlsConfig.fontBackgroundColor.colorsPerRow
+
+This is the maximum number of color options that will be shown in a single row. By default `10`.
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          fontBackgroundColor: {
+            colorsPerRow: 30,
+          },
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other number.
+
+#### toolbar.controlsConfig.fontBackgroundColor.options
+
+This is and array with the available color list. In order to see the default value go to: [Default configuration section](/configuration/default-configuration).
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          fontBackgroundColor: {
+            options: [
+              { text: 'black', value: 'rgb(0, 0, 0)' },
+              { text: 'white', value: 'rgb(255, 255, 255)' },
+              { text: 'red', value: 'rgb(255, 0, 0)' },
+              { text: 'green', value: 'rgb(0, 255, 0)' },
+              { text: 'blue', value: 'rgb(0, 0, 255)' },
+            ],
+          },
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other colors.
+
+The `text` property contains the text shown in tooltip when the user moves the mouse over the color.
+The `value` property contains the value of the color in rgb, hex or string (``black``, `'red'`, etc.).
+
+### toolbar.controlsConfig.fontSize
+
+#### toolbar.controlsConfig.fontSize.options
+
+This is an array with the available sizes. In order to see the default value go to: [Default configuration section](/configuration/default-configuration).
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          fontSize: {
+            options: [
+              'default',
+              '4px',
+              '8px',
+              '12px',
+              '24px',
+              '36px',
+              '60px',
+              '72px',
+              '96px',
+            ],
+          },
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other font sizes.
+
+### toolbar.controlsConfig.fontFamily
+
+#### toolbar.controlsConfig.fontFamily.options
+
+This is an array with the available font families. In order to see the default value go to: [Default configuration section](/configuration/default-configuration).
+
+<Playground>
+  {() => {
+    const config = {
+      toolbar: {
+        controlsConfig: {
+          fontFamily: {
+            options: [
+              'default',
+              'Arial',
+              'Tahoma',
+              'Times New Roman',
+              'Impact',
+            ],
+          },
+        }
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other font families.

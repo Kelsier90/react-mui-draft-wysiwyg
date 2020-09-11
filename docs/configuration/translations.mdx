@@ -1,0 +1,40 @@
+---
+name: translations
+route: /configuration/translations
+menu: Configuration
+---
+
+import { Playground } from "docz";
+import MUIEditor, { MUIEditorState } from "../../src";
+
+# translations
+
+You can provide your own translations and override the default ones.
+
+<Playground>
+  {() => {
+    const config = {
+      translations: {
+        controls: {
+          blockType: {
+            labels: {
+              header1: 'Title one',
+              header2: 'Title two',
+            },
+          }
+        },
+      },
+    };
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(config))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (<MUIEditor editorState={editorState} onChange={onChange} config={config} />)
+  }}
+</Playground>
+
+You can edit the code above and try other translations.
+
+You can see the translations structure here:
+
+https://github.com/Kelsier90/react-mui-draft-wysiwyg/tree/master/src/lang/translations

@@ -1,0 +1,46 @@
+---
+name: Save content
+route: /examples/save-content
+menu: Examples
+---
+
+import MUIEditor, { MUIEditorState } from "../../src";
+import { convertToRaw } from 'draft-js';
+import { Playground } from "docz";
+
+> This example shows how to save the editor content for example to a server.
+
+## Imports
+
+```bash
+import MUIEditor, { MUIEditorState } from "react-mui-draft-wysiwyg";
+import { convertToRaw } from 'draft-js';
+```
+
+More info for `convertToRaw`:
+
+https://draftjs.org/docs/api-reference-data-conversion/#converttoraw
+
+## Playground
+
+<Playground>
+  {() => {
+    const editorConfig = {}
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty(editorConfig));
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    const save = () => {
+      const rawContent = convertToRaw(editorState.getCurrentContent());
+      // Here you can send the rawContent object to a server or whatever you want
+      console.log(rawContent);
+      alert('Saved');
+    };
+    return (
+      <>
+        <MUIEditor editorState={editorState} onChange={onChange} config={editorConfig} />
+        <button onClick={save} type="button">Save</button>
+      </>
+    )
+  }}
+</Playground>

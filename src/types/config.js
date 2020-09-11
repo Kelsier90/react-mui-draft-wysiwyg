@@ -1,5 +1,5 @@
 import { defaultToolbarControls, defaultToolbarControlsConfiguration } from './editorToolbar';
-import { Paper } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
 
 export const defaultConfig = {
     lang: 'en',

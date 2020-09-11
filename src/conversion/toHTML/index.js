@@ -85,7 +85,7 @@ const toHTML = (contentState) => {
             const styleCloseTagBeforeOpenIndexList = [];
 
             for (const inlineStyle of charInlineStyles) {
-                if (!currentOpenedStylesMap[inlineStyle] !== undefined) {
+                if (currentOpenedStylesMap[inlineStyle] === undefined) {
                     styleOpenTagList.push(inlineStyle);
                     currentOpenedStylesMap[inlineStyle] = charIndex;
                 } else if (entityOpenTag || entityCloseTag) {

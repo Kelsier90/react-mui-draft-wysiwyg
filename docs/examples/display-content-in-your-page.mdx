@@ -1,0 +1,53 @@
+---
+name: Display the content in your page
+route: /examples/display-content-in-your-page
+menu: Examples
+---
+
+import MUIEditor, { MUIEditorState } from "../../src";
+import { convertFromRaw } from 'draft-js';
+import { Playground } from "docz";
+
+> Display the content in your page
+
+## Imports
+
+```bash
+import MUIEditor, { MUIEditorState } from "react-mui-draft-wysiwyg";
+import { convertFromRaw } from 'draft-js';
+```
+
+## Playground
+
+<Playground>
+  {() => {
+    const rawContent = {"blocks":[{"key":"e4lom","text":"Wow! Nice article Jane Doe!","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":0,"length":3,"style":"BOLD"},{"offset":18,"length":8,"style":"ITALIC"}],"entityRanges":[],"data":{}},{"key":"c128v","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"5uoeh","text":"I would recommend it to everyone.","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":24,"length":8,"style":"BOLD"},{"offset":24,"length":8,"style":"FONT_COLOR-rgb(255, 0, 0)"}],"entityRanges":[],"data":{}},{"key":"2cvur","text":" ","type":"atomic","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":1,"key":0}],"data":{}},{"key":"27uqd","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{"0":{"type":"IMAGE","mutability":"IMMUTABLE","data":{"src":"https://picsum.photos/200/300","width":200,"height":300}}}};
+    const editorConfig = {
+      toolbar: { visible: false },
+      draftEditor: { readOnly: true },
+      editor: {
+        wrapperElement: 'div',
+        style: {
+          padding: 0,
+          borderTop: '1px solid gray',
+        }
+      },
+    }
+    const [editorState, setEditorState] = React.useState(MUIEditorState.createWithContent(editorConfig, convertFromRaw(rawContent)))
+    const onChange = (newState) => {
+      setEditorState(newState)
+    }
+    return (
+      <>
+        <h1>My article</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ornare ut tellus ac pulvinar. Nunc in nunc id eros vehicula volutpat id non est. Duis est libero, semper varius purus in, scelerisque venenatis elit. Phasellus consequat elementum dignissim. Duis hendrerit tellus sed arcu viverra eleifend. Suspendisse sagittis eu quam et aliquam. Duis quis hendrerit diam. Aenean in ex felis.</p>
+        <h2>Comments</h2>
+        <h3>John Doe</h3>
+        <MUIEditor
+          editorState={editorState}
+          onChange={onChange}
+          config={editorConfig} />
+      </>
+    )
+  }}
+</Playground>
