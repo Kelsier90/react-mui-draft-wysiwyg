@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 /**
  * Material UI Draft.js editor
  *
- * @version 1.0.0
+ * @version 1.0.2
  * @author [Rubén Albarracín](https://github.com/Kelsier90)
  */
 function MUIEditor({

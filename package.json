@@ -1,7 +1,7 @@
 {
   "homepage": "https://kelsier90.github.io/react-mui-draft-wysiwyg/",
   "name": "react-mui-draft-wysiwyg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component that allows to use a rich editor based on Material UI and Draft-js",
   "author": "Kelsier90",
   "keywords": ["react", "reactjs", "mui", "material", "wysiwyg", "rich", "text", "editor", "draft", "html"],
