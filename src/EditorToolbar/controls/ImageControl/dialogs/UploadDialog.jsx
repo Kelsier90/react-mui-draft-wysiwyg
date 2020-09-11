@@ -44,6 +44,7 @@ function UploadDialog({ open, onClose, onSubmit, uploadCallback }) {
     const [isUploading, setIsUploading] = React.useState(false);
     const [isValidImage, setIsValidImage] = React.useState(false);
     const [hasError, setHasError] = React.useState(false);
+    const [errorMessage, setErrorMessage] = React.useState(null);
     const [highlightDropArea, setHighlightDropArea] = React.useState(false);
     const inputFileRef = React.createRef();
     const classes = useStyles({ highlightDropArea });
@@ -92,24 +93,32 @@ function UploadDialog({ open, onClose, onSubmit, uploadCallback }) {
     const onSelectFile = async (file) => {
         setHighlightDropArea(false);
         setIsUploading(true);
-        const selectedImageUrl = await uploadCallback(file);
-        setImageURL(selectedImageUrl);
-        const image = new Image();
-        image.onload = function () {
-            setImageWidth(this.width);
-            setImageOriginalWidth(this.width);
-            setImageHeight(this.height);
-            setImageOriginalHeight(this.height);
-            setIsUploading(false);
-            setIsValidImage(true);
-            setHasError(false);
-        };
-        image.onerror = function () {
+        try {
+            const selectedImageUrl = await uploadCallback(file);
+            setImageURL(selectedImageUrl);
+            const image = new Image();
+            image.onload = function () {
+                setImageWidth(this.width);
+                setImageOriginalWidth(this.width);
+                setImageHeight(this.height);
+                setImageOriginalHeight(this.height);
+                setIsUploading(false);
+                setIsValidImage(true);
+                setHasError(false);
+            };
+            image.onerror = function () {
+                setIsUploading(false);
+                setIsValidImage(false);
+                setHasError(true);
+                setErrorMessage(null);
+            };
+            image.src = selectedImageUrl;
+        } catch (e) {
             setIsUploading(false);
             setIsValidImage(false);
             setHasError(true);
-        };
-        image.src = selectedImageUrl;
+            setErrorMessage(e);
+        }
     };
 
     const resetForm = () => {
@@ -154,8 +163,10 @@ function UploadDialog({ open, onClose, onSubmit, uploadCallback }) {
                     )}
 
                     {hasError && !isValidImage && (
-                        <Typography variant="subtitle1" color="error" gutterBottom>
-                            {editor.translate('controls.image.errorMessages.notValidImage')}
+                        <Typography variant="subtitle1" color="error" align="center" gutterBottom>
+                            {errorMessage !== null
+                                ? errorMessage
+                                : editor.translate('controls.image.errorMessages.notValidImage')}
                         </Typography>
                     )}
 

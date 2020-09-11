@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kelsier90.github.io/react-mui-draft-wysiwyg/",
   "name": "react-mui-draft-wysiwyg",
   "version": "1.0.1",
   "description": "React component that allows to use a rich editor based on Material UI and Draft-js",

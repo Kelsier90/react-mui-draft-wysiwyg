@@ -7,9 +7,15 @@ import Paper from '@material-ui/core/Paper';
 import { defaultConfig } from './types/config';
 import Translator from './lang/Translator';
 import { makeStyles } from '@material-ui/core/styles';
+import toHTML from './conversion/toHTML';
+import useEditor from './hooks/useEditor';
+import useEditorFocus from './hooks/useEditorFocus';
 import 'draft-js/dist/Draft.css';
 
 export { toolbarControlTypes } from './types/editorToolbar';
+export { LANG_PREFIX } from './types/lang';
+export { fileToBase64 } from './utils/fileUtils';
+export { toHTML, useEditor, useEditorFocus };
 
 export const EditorContext = React.createContext({});
 
@@ -183,37 +189,13 @@ MUIEditor.displayName = 'MUIEditor';
 MUIEditor.propTypes = {
     /** Immutable object that represents the entire state of the editor */
     editorState: PropTypes.object.isRequired,
-    /**
-     * The function to be executed by the Editor when edits and selection changes occur.
-     * @param {Object} newState - The new editor state.
-     */
+    /** The function to be executed by the Editor when edits and selection changes occur. The new editor state is passed by parameter. */
     onChange: PropTypes.func.isRequired,
-    /**
-     * The function to be executed by the Editor when a focus event is triggered.
-     * @param {Object} event - The SyntheticFocusEvent object
-     */
+    /** The function to be executed by the Editor when a focus event is triggered. The new editor state is passed by parameter. */
     onFocus: PropTypes.func,
-    /**
-     * The function to be executed by the Editor when a blur event is triggered.
-     * @param {Object} event - The SyntheticFocusEvent object
-     * */
+    /** The function to be executed by the Editor when a blur event is triggered. The new editor state is passed by parameter. */
     onBlur: PropTypes.func,
-    /**
-     *  All the editor configuration options
-     * @typedef {Object} config
-     * @property {string} lang - Editor language ISO code. Available languages: 'en', 'es', 'ca',
-     * @property {object} translations - Your custom translations,
-     * @property {object} draftEditor - Draftjs editor options. Full options list here: https://draftjs.org/docs/api-reference-editor#props,
-     * @property {string|FunctionComponent} editor.wrapperElement - Editor component element
-     * @property {string} editor.className - Editor className
-     * @property {string} editor.style - Editor style
-     * @property {string} toolbar.className - Toolbar className
-     * @property {string} toolbar.style - Toolbar style
-     * @property {boolean} toolbar.visible - Set the toolbar visibility
-     * @property {'top'|'bottom'} toolbar.position - Set the toolbar position ('top' or 'bottom')
-     * @property {Array} toolbar.controls - List of toolbar controls
-     * @property {object} toolbar.controlsConfig - Object that represents the configuration for all toolbar controls
-     */
+    /** All the editor configuration options */
     config: PropTypes.object,
 };
 
