@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/react-mui-draft-wysiwyg.svg)](https://www.npmjs.com/package/react-mui-draft-wysiwyg) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Documentation in progress...
+
 ## Install
 if you don't have Material UI installed yet:
 
