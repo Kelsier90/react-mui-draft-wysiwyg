@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/react-mui-draft-wysiwyg.svg)](https://www.npmjs.com/package/react-mui-draft-wysiwyg) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+![Hi, I'm a rich text editor based on MUI and Draft.js](https://raw.githubusercontent.com/Kelsier90/react-mui-draft-wysiwyg/master/example/public/hi.gif)
+
 ## Install
 if you don't have Material UI installed yet:
 
