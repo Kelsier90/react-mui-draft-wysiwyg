@@ -1,4 +1,4 @@
-# Pre requis
+# Pre-requise
   - node v 14.18.2
 
 ```
@@ -6,11 +6,13 @@ nvm i 14.18.2
 ```
 # Run
 ```
-git clone <https://...repo>
-cd ./react-mui17-draft-wysiwyg
+git clone https://github.com/xdrkush/react-mui-draft-wysiwyg.git
+cd ./example-react17-mui5
 npm i
 npm start
 ```
+
+Enjoy'
 
 # Getting Started with Create React App
 
